@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  .featured-section {
+    background: radial-gradient(circle at top right, #0d6efd15, #6610f215);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+
+  .input-group-text {
+    font-size: 1.1rem;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+  }
+
+  .event-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.1);
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
+  }
+
+  .event-img {
+    border-radius: 1rem;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .event-title {
+    font-weight: 600;
+    color: #0d6efd;
+  }
+
+  .event-meta i {
+    color: #6610f2;
+  }
+
+  @media (max-width: 576px) {
+    .featured-section {
+      padding: 2rem 1rem;
+    }
+  }
+  </style>
+
+  
+</head>
+
+<body>
+  
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm custom-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+      <span class="translatable fs-5" data-en="Virtual University Events" data-ar="فعاليات الجامعة الافتراضية">Virtual University Events</span>
+    </a>
+
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="bi bi-list fs-1"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center gap-lg-3 text-center">
+        <li class="nav-item">
+          <a class="nav-link active translatable" data-en="Home" data-ar="الرئيسية" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="Events" data-ar="الفعاليات" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="About" data-ar="حول الموقع" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="Contact" data-ar="اتصل بنا" href="contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <div class="ms-lg-4 mt-3 mt-lg-0 d-flex justify-content-center gap-2">
+        <img src="https://flagcdn.com/w40/us.png" id="enFlag" class="flag-btn" alt="English">
+        <img src="https://flagcdn.com/w40/sy.png" id="arFlag" class="flag-btn" alt="Arabic">
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="container py-5 position-relative featured-section mt-5">
+  <h2 class="text-center mb-5 fw-bold text-gradient translatable"
+      data-en="Virtual University Events"
+      data-ar="فعاليات الجامعة الافتراضية   ">
+      Virtual University Events
+  </h2>
+
+  <div class="row justify-content-center mb-4 ">
+    <div class="col-md-5 mb-3">
+      <div class="input-group shadow-sm rounded-4 overflow-hidden">
+        <span class="input-group-text bg-primary text-white border-0">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" id="searchInput" class="form-control border-0"
+               placeholder="Search by event name..."
+               data-en-placeholder="Search by event name..."
+               data-ar-placeholder="ابحث باسم الفعالية...">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-group shadow-sm rounded-4 overflow-hidden">
+        <span class="input-group-text bg-primary text-white border-0">
+          <i class="bi bi-calendar-event"></i>
+        </span>
+        <input type="date" id="dateFilter" class="form-control border-0">
+      </div>
+    </div>
+
+<div class="col-md-4">
+      <input type="text" id="placeFilter" class="form-control"
+             placeholder="Search by location...">
+    </div>
+
+    
+    <div class="col-md-4">
+    <select id="categoryFilter" class="form-select">
+      <option value="">All Categories</option>
+      <option value="Competitions">Competitions</option>
+      <option value="Acadimic">Acadimic</option>
+      <option value="Scientific">Scientific</option>
+      <option value="Social">Social</option>
+    </select>
+    </div>
+
+  </div>
+
+  <div class="row g-4 justify-content-center" id="eventsContainer">
+  </div>
+</section>
+
+<footer class="footer-section text-center text-white mt-5">
+  <div class="container py-5">
+    
+    <h5 class="fw-bold mb-4 translatable" data-en="Follow Us" data-ar="تابعنا">Follow Us</h5>
+    
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="https://www.facebook.com/share/1FVXJKkBu7" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/syrian_virtual_university?igsh=aWE1eGMyaDh4OW9o" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/SVU_Syria" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/school/syrianvirtualuniversity/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="http://www.youtube.com/@SyrianVirtualUniversitySVU" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="http://www.svuonline.org" class="social-link" target="_blank"><i class="fas fa-globe"></i></a>
+    </div>
+
+    <hr class="footer-divider mx-auto" />
+
+    <p class="small mt-3 mb-0 translatable" data-en="© 2026 Virtual University | Events Guide" data-ar="© 2026 جميع الحقوق محفوظة | فعاليات الجامعة الافتراضية">
+      © 2026 Virtual University | Events Guide
+    </p>
+  </div>
+</footer>
+
+<button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+  <script>
+    
+    const allEvents = [
+  { 
+    title: "SCPC Syrian Collegiate Programming Contest",
+    title_ar: "المسابقة البرمجية السورية",
+    category: "Competitions",
+    place: "Syrian Virtual University",
+    place_ar: "الجامعة الافتراضية السورية",
+    date: "28 May 2026 – 10:00 AM",
+    description: "The Syrian Virtual University is hosting the finals of the programming competition for students of the Higher Institute for Applied Sciences and Technology, within the framework of cooperation between the two academic institutions.",
+    description_ar: "تستضيف الجامعة الافتراضية السورية نهائي المسابقة البرمجية لطلاب المعهد العالي للعلوم التطبيقية والتكنولوجيا ضمن إطار التعاون بين المؤسستين الأكاديميتين",
+    image: "assets/img/SCPC.jpg"
+  },
+  { 
+    title: "Kids and Adolescents Programming Marathon-KPM",
+    title_ar: "الماراثون البرمجي للصغار واليافعين",
+    category: "Competitions",
+    place: "Homs",
+    place_ar: "حمص",
+    date: " 5 July 2026 – 10:00 AM",
+    description: " A community-oriented event aimed at promoting programming culture among younger generations.",
+    description_ar: "فعالية موجهة للمجتمع تهدف إلى نشر ثقافة البرمجة بين الأجيال الناشئة",
+    image: "assets/img/KPM.jpg"
+  },
+  { 
+    title: "Interactive scientific lectures",
+    title_ar: " محاضرات علمية تفاعلية",
+    category: "Scientific",
+    place: "Online",
+    place_ar: "أونلاين",
+    date: "20 May 2026 – 2:00 PM ",
+    description: "Sessions presented by university professors on academic topics, with opportunities for questions and discussion.",
+    description_ar:"جلسات يقدمها أساتذة الجامعة حول مواضيع أكاديمية مع إتاحة الفرصة للأسئلة والنقاش",
+    image: "assets/img/lectures.jpg"
+  },
+  { 
+    title: "Graduation ceremony for students of the Syrian Virtual University",
+    title_ar: "حفل تخرج طلاب الجامعة الافتراضية",
+    category: "Social",
+    place: "Damascus-Dar Alobera",
+    place_ar: "دمشق-دار الأوبرا",
+    date: " 25 Agust 2025 – 9:00 AM",
+    description: "The Syrian Virtual University is holding a graduation ceremony for students of the S20 semester.",
+    description_ar: "تقيم الجامعة الافتراضية السورية حفل تخرج طلاب الفصل S20 في أجواء مميزة ",
+    image: "assets/img/Graduate.jpg"
+  },
+  { 
+    title: "Your Academic Destination Forum",
+    title_ar: "ملتقى وجهتك الأكاديمية",
+    category: "Acadimic",
+    place: "Online",
+    place_ar: "أونلاين",
+    date: "29 April 2026 11:00 AM to 2:00 PM",
+    description: "The forum is an educational and interactive platform that aims to provide accurate information about university majors, research opportunities, and scientific and professional fields that are compatible with the labor market in Syria and abroad.",
+    description_ar: "يُعد الملتقى منصة تعليمية وتفاعلية تهدف إلى تقديم معلومات دقيقة حول التخصصات الجامعية، والفرص البحثية، والمجالات العلمية والمهنية التي تتوافق مع سوق العمل في سوريا وخارجها.",
+    image: "assets/img/Forum.jpg"
+  },
+  { 
+    title: "Syrian Universities Forum in Riyadh",
+    title_ar: "ملتقى الجامعات السورية في الرياض",
+    category: "Acadimic",
+    place: "Riyadh",
+    place_ar: "الرياض",
+    date: "17-18 October 2025",
+    description: "The Syrian Virtual University participated in the Syrian Universities Forum, with the aim of introducing its digital academic programs, registration mechanisms, and direct communication with Syrian students and residents in the Kingdom to enhance regional presence and academic cooperation.",
+    description_ar: "شاركت الجامعة الافتراضية السورية في ملتقى الجامعات السورية، بهدف التعريف ببرامجها الأكاديمية الرقمية، آليات التسجيل، والتواصل المباشر مع الطلاب السوريين والمقيمين في المملكة لتعزيز الحضور الإقليمي والتعاون الأكاديمي.",
+    image: "assets/img/forum2.jpg"
+  },
+  { 
+    title: "Master of Administrative Development",
+    title_ar: "ماجستير التنمية الإدارية",
+    category: "Scientific",
+    place: "Syrian Virtual University",
+    place_ar: "الجامعة الافتراضية السورية",
+    date: "May 2026",
+    description: "In cooperation with the Ministry of Administrative Development, the sixth cohort of this professional master's program has been launched, and registration is open until May 2026 to qualify government leaders.",
+    description_ar: "بالتعاون مع وزارة التنمية الإدارية، تم إطلاق الدفعة السادسة من هذا الماجستير المهني، وفتح باب التسجيل حتى مايو 2026 لتأهيل القيادات الحكومية",
+    image: "assets/img/Master.jpg"
+  }
+];
+
+      const container = document.getElementById("eventsContainer");
+      const searchInput = document.getElementById("searchInput");
+      const dateFilter = document.getElementById("dateFilter");
+      const placeFilter = document.getElementById("placeFilter");
+      const categoryFilter = document.getElementById("categoryFilter");
+
+      function renderEvents(events) {
+        container.innerHTML = "";
+        if (events.length === 0) {
+          container.innerHTML = `<p class="text-center text-light opacity-75 translatable"
+                                  data-en="No events found."
+                                  data-ar="لم يتم العثور على فعاليات.">No events found.</p>`;
+          return;
+        }
+
+        events.forEach(event => {
+          container.innerHTML += `
+            <div class="col-md-3 event-card" data-name="${event.title.toLowerCase()}" data-date="${event.date}">
+              <img src="${event.image}" alt="${event.title}" class="img-fluid rounded shadow">
+              <div class="card-body text-center text-light">
+                <h5 class="event-title fw-bold ">${event.title}</h5>
+                <p class="event-info text-muted"><i class="bi bi-calendar-event"></i> ${event.date}</p>
+                <p class="event-info text-muted"><i class="bi bi-geo-alt"></i> ${event.place}</p>
+                <p class="small opacity-75 text-muted">${event.description}</p>
+                <button class="btn btn-outline-info btn-sm rounded-pill px-3 translatable"
+                  data-en="Details"
+                  data-ar="التفاصيل"
+                  data-title="${event.title}"
+                  data-date="${event.date}"
+                  data-place="${event.place}"
+                  data-description="${event.description}"
+                  data-image="${event.image}"
+                  data-category="${event.category}"
+                  onclick="openEvent(this)">Details</button>
+              </div>
+            </div>`;
+        });
+      }
+
+      function filterEvents() {
+  const searchValue = searchInput.value.toLowerCase();
+  const dateValue = dateFilter.value;
+  const placeValue = placeFilter.value.toLowerCase();
+  const categoryValue = categoryFilter.value;
+
+    const filtered = allEvents.filter(event => {
+    const matchName = event.title.toLowerCase().includes(searchValue);
+
+    const matchDate = !dateValue || event.date.includes(dateValue);
+
+    const matchPlace = event.place.toLowerCase().includes(placeValue);
+
+    const matchCategory = !categoryValue || event.category === categoryValue;
+
+    return matchName && matchDate && matchPlace && matchCategory;
+  });
+
+  renderEvents(filtered);
+}
+
+      searchInput.addEventListener("input", filterEvents);
+      dateFilter.addEventListener("change", filterEvents);
+      placeFilter.addEventListener("input", filterEvents);
+      categoryFilter.addEventListener("change", filterEvents);
+      
+
+      function openEvent(button) {
+        const eventData = {
+          title: button.dataset.title,
+          date: button.dataset.date,
+          place: button.dataset.place,
+          image: button.dataset.image,
+          description: button.dataset.description,
+          category: button.dataset.category
+        };
+        localStorage.setItem("selectedEvent", JSON.stringify(eventData));
+        const similar = allEvents.filter(ev => ev.category === eventData.category && ev.title !== eventData.title);
+        localStorage.setItem("similarEvents", JSON.stringify(similar));
+        window.location.href = "event.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => renderEvents(allEvents));
+
+      
+  </script>
+
+  <script>
+      const arFlag = document.getElementById('arFlag');
+      const enFlag = document.getElementById('enFlag');
+      const translatable = document.querySelectorAll('.translatable');
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+        translatable.forEach(el => {
+          const text = el.getAttribute(`data-${lang}`);
+          if (text) el.textContent = text;
+        });
+
+        const inputs = document.querySelectorAll('[data-en-placeholder]');
+        inputs.forEach(input => {
+          input.placeholder = input.getAttribute(`data-${lang}-placeholder`);
+        });
+
+        const cards = document.querySelectorAll('.event-card');
+        cards.forEach((card, i) => {
+          const e = allEvents[i];
+          if (!e) return;
+          const title = lang === 'ar' ? e.title_ar : e.title;
+          const place = lang === 'ar' ? e.place_ar : e.place;
+          const desc = lang === 'ar' ? e.description_ar : e.description;
+          card.querySelector('.event-title').textContent = title;
+          card.querySelectorAll('.event-info')[1].innerHTML = `<i class="bi bi-geo-alt"></i> ${place}`;
+          card.querySelector('.small').textContent = desc;
+          const btn = card.querySelector('button');
+          btn.textContent = lang === 'ar' ? 'التفاصيل' : 'Details';
+        });
+      }
+
+      if (arFlag) arFlag.addEventListener('click', () => setLanguage('ar'));
+      if (enFlag) enFlag.addEventListener('click', () => setLanguage('en'));
+
+ 
+  </script>
+
+  <script src="assets/JS/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

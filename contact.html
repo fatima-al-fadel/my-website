@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .contact-section {
+      background: linear-gradient(135deg, #0d6efd 10%, #6610f2 90%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/connected.png') repeat;
+      opacity: 0.15;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #0dcaf0, #6610f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      color: #fff;
+    }
+
+    .info-card {
+      background: rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.25);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .map-container iframe {
+      border-radius: 10px;
+    }
+
+    .btn-info {
+      background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-info:hover {
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .lead { font-size: 1rem; }
+    }
+  </style>
+  
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm custom-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+      <span class="translatable fs-5" data-en="Virtual University Events" data-ar="فعاليات الجامعة الافتراضية">Virtual University Events</span>
+    </a>
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="bi bi-list fs-1"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center gap-lg-3 text-center">
+        <li class="nav-item">
+          <a class="nav-link active translatable" data-en="Home" data-ar="الرئيسية" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="Events" data-ar="الفعاليات" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="About Us" data-ar="من نحن" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link translatable" data-en="Contact" data-ar="اتصل بنا" href="contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <div class="ms-lg-4 mt-3 mt-lg-0 d-flex justify-content-center gap-2">
+        <img src="https://flagcdn.com/w40/us.png" id="enFlag" class="flag-btn" alt="English">
+        <img src="https://flagcdn.com/w40/sy.png" id="arFlag" class="flag-btn" alt="Arabic">
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<section class="contact-section position-relative py-5 text-light">
+  <div class="overlay"></div>
+
+  <div class="container position-relative">
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-white translatable"
+          data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h1>
+      <p class="lead mx-auto" style="max-width: 700px;"
+         data-en="Have an event idea, a partnership proposal, or feedback? We’d love to hear from you!"
+         data-ar="هل لديك فكرة فعالية، اقتراح شراكة، أو ملاحظات؟ يسعدنا أن نسمع منك!">
+         Have an event idea, a partnership proposal, or feedback? We’d love to hear from you!
+      </p>
+    </div>
+
+    <div class="row justify-content-center align-items-stretch g-4">
+  <div class="col-lg-6">
+    <div class="info-card h-100 p-4 shadow-lg rounded-4">
+
+      <h4 class="mb-4">
+        <i class="bi bi-geo-alt-fill text-info me-2"></i> Our Location
+      </h4>
+
+      <p class="mb-3">
+        <i class="bi bi-building me-2"></i>
+        <a href="https://maps.app.goo.gl/Roy1VQrmkZdorpUR9?g_st=atm" target="_blank"> موقع الجامعة
+        </a>
+      </p>
+
+      <p class="mb-3">
+        <i class="bi bi-telephone me-2"></i>
+        <a href="tel:+963112113469">+963112113469</a>
+      </p>
+
+      <p>
+        <i class="bi bi-envelope me-2"></i>
+        <a href="mailto:info@svuonline.org">info@svuonline.org</a>
+      </p>
+
+      <a href="https://maps.app.goo.gl/Roy1VQrmkZdorpUR9?g_st=atm"
+         target="_blank"
+         class="map-link">
+
+        <div class="map-container mt-4 rounded-3 overflow-hidden shadow-sm">
+          <iframe
+            src="https://www.google.com/maps?q=G759%2BHJM%2C%20Damascus&output=embed"
+            width="100%"
+            height="250"
+            style="border:0; pointer-events: none;"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </a>
+
+  </div>
+  </div>
+
+
+      <div class="col-lg-6">
+        <div class="contact-card glass-card p-4 rounded-4 shadow-lg">
+          <h4 class="mb-4"><i class="bi bi-send-fill text-info me-2"></i>
+            <span class="translatable" data-en="Send a Message" data-ar="أرسل رسالة">Send a Message</span>
+          </h4>
+
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Message *</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-info text-white w-100 fw-bold">
+              <i class="bi bi-send-fill me-2"></i> Send Message
+            </button>
+
+            <div class="alert alert-success mt-3 d-none" id="successMsg">
+              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent successfully.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+<footer class="footer-section text-center text-white ">
+  <div class="container py-5">
+    
+    <h5 class="fw-bold mb-4 translatable" data-en="Follow Us" data-ar="تابعنا">Follow Us</h5>
+    
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="https://www.facebook.com/share/1FVXJKkBu7" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/syrian_virtual_university?igsh=aWE1eGMyaDh4OW9o" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/SVU_Syria" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/school/syrianvirtualuniversity/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="http://www.youtube.com/@SyrianVirtualUniversitySVU" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="http://www.svuonline.org" class="social-link" target="_blank"><i class="fas fa-globe"></i></a>
+    </div>
+
+    <hr class="footer-divider mx-auto" />
+
+    <p class="small mt-3 mb-0 translatable" data-en="© 2025 All rights reserved | MetroEvents" data-ar="© 2025 جميع الحقوق محفوظة | فعاليات مترو">
+      © 2025 All rights reserved | MetroEvents
+    </p>
+  </div>
+</footer>
+
+<button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+
+    let valid = true;
+
+    if (name.value.trim() === '') {
+      document.getElementById('nameError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('nameError').classList.add('d-none');
+    }
+
+    if (email.value.trim() === '' || !email.value.includes('@')) {
+      document.getElementById('emailError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('emailError').classList.add('d-none');
+    }
+
+    if (message.value.trim() === '') {
+      document.getElementById('messageError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('messageError').classList.add('d-none');
+    }
+
+    if (valid) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Sending...';
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i> Send Message';
+        successMsg.classList.remove('d-none');
+        contactForm.reset();
+      }, 2000);
+    }
+  });
+</script>
+
+<script>
+  const translatableElements = document.querySelectorAll('.translatable');
+  const arFlag = document.getElementById('arFlag');
+  const enFlag = document.getElementById('enFlag');
+
+  function setPlaceholders(lang) {
+    const inputs = document.querySelectorAll('[data-en-placeholder], [data-ar-placeholder]');
+    inputs.forEach(input => {
+      const ph = input.getAttribute(`data-${lang}-placeholder`) || input.getAttribute(`data-${lang === 'ar' ? 'data-ar-placeholder' : 'data-en-placeholder'}`);
+      const placeholder = input.getAttribute(`data-${lang}-placeholder`) || input.getAttribute(`data-${lang === 'ar' ? 'data-ar-placeholder' : 'data-en-placeholder'}`);
+      if (placeholder) input.placeholder = placeholder;
+    });
+
+    const textarea = document.getElementById('message');
+    if (textarea) {
+      const ph = textarea.getAttribute(`data-${lang}-placeholder`);
+      if (ph) textarea.placeholder = ph;
+    }
+  }
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    const form = document.getElementById('contactForm');
+    if (form) form.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    translatableElements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text !== null && text !== undefined) {
+        if (el.tagName.toLowerCase() === 'button' || el.getAttribute(`data-${lang}`).includes('<')) {
+          el.innerHTML = el.getAttribute(`data-${lang}`);
+        } else {
+          el.textContent = text;
+        }
+      }
+    });
+
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    if (nameInput) {
+      const ph = nameInput.getAttribute(`data-${lang}-placeholder`);
+      if (ph) nameInput.placeholder = ph;
+    }
+    if (emailInput) {
+      const ph = emailInput.getAttribute(`data-${lang}-placeholder`);
+      if (ph) emailInput.placeholder = ph;
+    }
+    if (messageInput) {
+      const ph = messageInput.getAttribute(`data-${lang}-placeholder`);
+      if (ph) messageInput.placeholder = ph;
+    }
+
+    const nameErr = document.getElementById('nameError');
+    const emailErr = document.getElementById('emailError');
+    const messageErr = document.getElementById('messageError');
+    const success = document.getElementById('successMsg');
+
+    if (nameErr && nameErr.getAttribute(`data-${lang}`)) nameErr.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i> ' + nameErr.getAttribute(`data-${lang}`);
+    if (emailErr && emailErr.getAttribute(`data-${lang}`)) emailErr.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i> ' + emailErr.getAttribute(`data-${lang}`);
+    if (messageErr && messageErr.getAttribute(`data-${lang}`)) messageErr.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i> ' + messageErr.getAttribute(`data-${lang}`);
+    if (success && success.getAttribute(`data-${lang}`)) success.textContent = success.getAttribute(`data-${lang}`);
+  }
+
+  if (arFlag) arFlag.addEventListener('click', () => setLanguage('ar'));
+  if (enFlag) enFlag.addEventListener('click', () => setLanguage('en'));
+
+</script>
+
+<script src="assets/JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
